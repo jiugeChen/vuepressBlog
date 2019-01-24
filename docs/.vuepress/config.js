@@ -1,9 +1,9 @@
 module.exports = {
-    title: 'jiuge blog',
+    title: 'Chen\'s Jia',
     description: '我的个人网站',
     head: [ // 注入到当前页面的 HTML <head> 中的标签
-      ['link', { rel: 'manifest', href: '/photo.jpg' }],
-      ['link', { rel: 'apple-touch-icon', href: '/photo.jpg' }],
+      ['link', { rel: 'manifest', href: '' }],
+      ['link', { rel: 'apple-touch-icon', href: '' }],
     ],
     serviceWorker: true, // 是否开启 PWA
     base: '/', // 这是部署到github相关的配置
@@ -13,7 +13,7 @@ module.exports = {
     themeConfig: {
     
       nav:[ // 导航栏配置
-        {text: '学习笔记', link: '/notes/fe/HTMLCSS' },
+        {text: '学习笔记', link: '/notes/fe/' },
         {text: '生活随笔', link: '/MyLife/'},
         {text: '社交账号',
         items:[
@@ -29,6 +29,7 @@ module.exports = {
             collapsable: true,
             children: [
               '/MyLife/',
+              '/MyLife/life',
               
             ]
           }
@@ -39,10 +40,12 @@ module.exports = {
           collapsable: true,
           children: [
            
-            '/notes/fe/HTMLCSS',
+            '/notes/fe/',
             '/notes/fe/js',
             '/notes/fe/es6',
-            '/notes/fe/vue'
+            '/notes/fe/vue',
+            '/notes/fe/mobile',
+            
           ]
         },
       
@@ -54,10 +57,11 @@ module.exports = {
           ]
         },
         {
-          title: 'VuePress博客搭建',
+          title: '其他',
           collapsable: true,
           children: [
-            '/notes/vp/'
+            '/notes/other/',
+            '/notes/other/git',
           ]
         },
         {
