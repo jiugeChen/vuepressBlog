@@ -1,7 +1,7 @@
 <template>
 <div class="homeapp">
     <div class="appbox">
-       <img src="../public/my.jpg" alt="" srcset="">
+       <img src="../public/photo.jpg" alt="" srcset="">
     </div>
     <div class="txt">
         <h1>
@@ -25,9 +25,14 @@ export default {
 <style scoped >
 .homeapp{
     /* background-color: blue; */
-    position: relative;
+    position:absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
+    background-color: transparent;
+    background:url('../public/adv_bg.jpg') no-repeat;
+    
 
 }
 .txt{
@@ -35,12 +40,14 @@ export default {
 }
 .appbox{
     margin: 0 auto;
-    background-color: pink;
-    width: 20rem;
-    height: 20rem;
+    background-color: transparent;
+    width: 18rem;
+    height: 18rem;
     position: relative;
     top:2rem;
+    margin-top: 5rem;
     overflow: hidden;
+    border-radius: 2px;
 }
 .appbox img{
     width: 100%;
