@@ -16,6 +16,7 @@
 
  1. 创建文件 `$ git touch a1.html` 
  2. 文件提交到暂存区 `$ git add a1.html`
+ 3. 文件提交描述 `$ git commit -m '描述'`
  - 查看文件状态 ` $ git status`
  #### 提交到仓库 
  `$ git push`
