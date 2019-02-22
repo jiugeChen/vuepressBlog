@@ -16,7 +16,7 @@ export default {
     data () {
         return {
             message:'九歌',
-            tip:'别假装努力',
+            tip:'日积月累',
         }
         
     }
