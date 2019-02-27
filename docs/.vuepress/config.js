@@ -45,6 +45,7 @@ module.exports = {
             '/notes/fe/es6',
             '/notes/fe/vue',
             '/notes/fe/mobile',
+            '/notes/fe/data',
             
           ]
         },
@@ -54,6 +55,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/notes/be/php',
+            '/notes/be/node',
           ]
         },
         {
