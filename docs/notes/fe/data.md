@@ -41,7 +41,7 @@
   - 怎么用
   - 聊天室
   - 视频点播
-  #### websocket
+  #### socket.io
   - 安装`npm i socket.io  -D`
   #### websocket聊天室
    1. 用户注册、登陆

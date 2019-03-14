@@ -54,7 +54,7 @@ module.exports = {
           title: '后端',
           collapsable: true,
           children: [
-            '/notes/be/php',
+            // '/notes/be/php',
             '/notes/be/node',
           ]
         },
