@@ -50,7 +50,21 @@ window.onload = function () {
  计算属性 --简单、可缓存  受控制访问-get/set
  监听 --当变化时有通知 -适合异步操作 
 ## Vue-Router
-  #### 用法
+#### 命名路由
+* 需求，通过a标签点击，做页面数据的跳转
+* 使用router-link标签
+    - 1:去哪里 `<router-link to="/beijing">去北京</router-link>`
+    - 2:去哪里 `<router-link :to="{name:'bj'}">去北京</router-link>`
+        + 更利于维护，如果修改了path，只修改路由配置中的path，该a标签会根据修改后的值生成href属性
+#### 编程导航
+* 不能保证用户一定会点击某些按钮
+* 并且当前操作，除了路由跳转以外，还有一些别的附加操作
+* this.$router.go 根据浏览器记录 前进1 后退-1
+* this.$router.push(直接跳转到某个页面显示)
+    - push参数: 字符串 /xxx
+    - 对象 :  `{name:'xxx',query:{id:1},params:{name:2}  }`
+    
+#### 用法
    - 渲染容器  <router-view></router-view> router的component会被渲染到里面
      - to="/路径"
      - :to="{ name,path,params,query}"
@@ -78,8 +92,77 @@ window.onload = function () {
  #### 局部组件
   - 在Vue实例上`components:{ '名字':{template:'xxx'} }`
  ### 组件通信
-  - 父子组件
-  - 跨组件
+  #### 获取dom元素
+  * 救命稻草, 前端框架就是为了减少DOM操作，但是特定情况下，也给你留了后门
+  * 在指定的元素上，添加ref="名称A"
+  * 在获取的地方加入 this.$refs.名称A  
+    - 如果ref放在了原生DOM元素上，获取的数据就是原生DOM对象
+        + 可以直接操作
+    - 如果ref放在了组件对象上，获取的就是组件对象
+        + 1:获取到DOM对象,通过this.$refs.名称B.$el,进行操作
+    - 对应的事件
+        + created 完成了数据的初始化，此时还未生成DOM，无法操作DOM
+        + mounted 将数据已经装载到了DOM之上,可以操作DOM
+
+  #### 父组件传给子组件
+  ::: tip 也可以传输数组或者对象
+  :::
+  * 父组件通过子组件的属性将值进行传递
+    - 方式有2：
+       + 常量 prop1 = "常亮值"
+       + 常量 :prop2 = "变量名"
+  * 子组件需要声明
+    - 根据props:['prop1,prop2']
+    - 在页面直接使用{{ prop1 }}
+    - 在js中应该如何使用prop1？   用this.prop1获取
+  * 地方
+
+  - 父组件
+   ```html
+<template>
+  <div class="hello">
+    <p>我是父组件</p>
+    <Son :price="index"></Son>
+    <input type="text" v-model="index" />
+    <router-view></router-view>
+  </div>
+</template>
+<script>
+import Son from "@/components/commit/son";
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      index: "我是父组件的值我传给子组件"
+    };
+  },
+  components: {
+    Son
+  }
+};
+</script>
+```
+
+  - 子组件
+```html
+<template>
+  <div class="son">
+    <p>{{ msg }}</p>
+    <p>{{ price }}</p>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      msg: "我是子组件"
+    };
+  },
+  props: ["price"]
+};
+</script>
+```
+
  ### 组件的属性 props
  ### 组件的refs
  ### 组件的事件
