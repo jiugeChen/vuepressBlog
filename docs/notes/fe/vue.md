@@ -80,6 +80,7 @@ window.onload = function () {
      - `beforeRouteUpdate (to, from, next) { }`
    
  #### 总结 ： 路由就是一个锚点（#XX）,根据锚点信息，确定要显示那个组件
+ ![tuli](../../img/tuli.jpg)
  #### 对象
    1. path       匹配路由路径 可以带参数
    2. component  路由主体
@@ -92,17 +93,8 @@ window.onload = function () {
  #### 局部组件
   - 在Vue实例上`components:{ '名字':{template:'xxx'} }`
  ### 组件通信
-  #### 获取dom元素
-  * 救命稻草, 前端框架就是为了减少DOM操作，但是特定情况下，也给你留了后门
-  * 在指定的元素上，添加ref="名称A"
-  * 在获取的地方加入 this.$refs.名称A  
-    - 如果ref放在了原生DOM元素上，获取的数据就是原生DOM对象
-        + 可以直接操作
-    - 如果ref放在了组件对象上，获取的就是组件对象
-        + 1:获取到DOM对象,通过this.$refs.名称B.$el,进行操作
-    - 对应的事件
-        + created 完成了数据的初始化，此时还未生成DOM，无法操作DOM
-        + mounted 将数据已经装载到了DOM之上,可以操作DOM
+ 
+
 
   #### 父组件传给子组件
   ::: tip 也可以传输数组或者对象
@@ -162,9 +154,17 @@ export default {
 };
 </script>
 ```
-
- ### 组件的属性 props
  ### 组件的refs
+   * 救命稻草, 前端框架就是为了减少DOM操作，但是特定情况下，也给你留了后门
+  * 在指定的元素上，添加ref="名称A"
+  * 在获取的地方加入 this.$refs.名称A  
+    - 如果ref放在了原生DOM元素上，获取的数据就是原生DOM对象
+        + 可以直接操作
+    - 如果ref放在了组件对象上，获取的就是组件对象
+        + 1:获取到DOM对象,通过this.$refs.名称B.$el,进行操作
+    - 对应的事件
+        + created 完成了数据的初始化，此时还未生成DOM，无法操作DOM
+        + mounted 将数据已经装载到了DOM之上,可以操作DOM
  ### 组件的事件
   - $on
   - $emit
