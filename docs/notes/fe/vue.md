@@ -54,7 +54,7 @@ window.onload = function () {
 * 需求，通过a标签点击，做页面数据的跳转
 * 使用router-link标签
     - 1:去哪里 `<router-link to="/beijing">去北京</router-link>`
-    - 2:去哪里 `<router-link :to="{name:'bj'}">去北京</router-link>`
+    - 2:去哪里 `<router-link :to="{n a m e:'bj'}">去北京</router-link>`
         + 更利于维护，如果修改了path，只修改路由配置中的path，该a标签会根据修改后的值生成href属性
 #### 编程导航
 * 不能保证用户一定会点击某些按钮
@@ -63,12 +63,13 @@ window.onload = function () {
 * this.$router.push(直接跳转到某个页面显示)
     - push参数: 字符串 /xxx
     - 对象 :  `{name:'xxx',query:{id:1},params:{name:2}  }`
-    
+  
+  
 #### 用法
-   - 渲染容器  <router-view></router-view> router的component会被渲染到里面
+   - 渲染容器  `<router-view></router-view>` router的component会被渲染到里面
      - to="/路径"
      - :to="{ name,path,params,query}"
-   - 路由跳转 <router-link >文字</router-link>
+   - 路由跳转 `<router-link >`文字`</router-link>`
    - js操作路由 
      - `this.$router.go(-1)` 
      - `this.$router.push('/user')` 
@@ -233,7 +234,7 @@ js代码
 ```javascript
 
 export default {
-    name: "Carousel",
+    // name: "Carousel",
     data() {
      return{
          imgList : [
