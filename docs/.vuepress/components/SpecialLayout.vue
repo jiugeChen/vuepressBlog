@@ -1,5 +1,10 @@
 <template>
 <div class="homeapp">
+    <div class="newSite">
+       本博客停止维护..访问我的
+       <a href="https://jiugework.gitee.io">新的博客</a>
+        
+    </div>
     <div class="appbox">
        <img src="../public/photo.jpg" alt="" srcset="">
     </div>
@@ -27,13 +32,23 @@ export default {
     /* background-color: blue; */
     position:absolute;
     left: 0;
-    top: 0;
+    top: 60px;
     width: 100%;
     height: 100%;
     background-color: transparent;
     background:url('../public/adv_bg.jpg') no-repeat;
     
 
+}
+.newSite{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(185, 43, 43);
+    z-index: 99;
+    text-align: center;
+    line-height: 60px;
+    color: white;
 }
 .txt{
     margin-top: 3rem;
